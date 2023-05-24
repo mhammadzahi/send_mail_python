@@ -1,0 +1,2 @@
+user1@gmail.com:app_password_1
+user2@gmail.com:app_password_2

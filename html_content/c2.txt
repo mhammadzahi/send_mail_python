@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Check</title>
+      <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'><!--font ubuntu -->
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}"><!--bootstrap-->
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/all.min.css') }}"><!--fontawesome -->
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"><!--your styles -->
+  </head>
+  <body>
+    <br>
+
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="container logo">
+            <div class="row">
+              <div class="col-12 text-center shadow p-3 mb-5 bg-white rounded">
+                <a href="/"><img src="{{ url_for('static', filename='img/logo.png') }}" alt="Your Logo" class="img-fluid"></a>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="h21">Already a member? Please Verify</h2>
+
+          <form action="/" method="post">
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone:</label>
+              <input type="tel" class="form-control" id="phone" name="phone" placeholder="🇦🇪 050 123 4567">
+            </div>
+            <button type="submit" class="btn btn-primary submit-btn">Submit</button>
+            <h5 style="margin-top:0.625em" class="h21">If not, click <a href="/notMember">here</a> to proceed without membership.</h5>
+          </form>
+          
+        </div>
+      </div>
+
+      <footer class="footer ftr">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <a href="tel:+97124444360"><img src="{{ url_for('static', filename='img/tel.png') }}" class="img-fluid"></a>
+            </div>
+            <div class="col-sm-4">
+              <a href="mailto:contact@miramar-uae.com"><img src="{{ url_for('static', filename='img/mail.png') }}" class="img-fluid"></a>
+            </div>
+            <div class="col-sm-4">
+              <a href="https://goo.gl/maps/YcJSwonRBSoWyYo3A" target="_blank"><img src="{{ url_for('static', filename='img/loc.png') }}" class="img-fluid"></a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      
+       <span id="msg" hidden>{{msg}}</span>
+      
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script><!-- sweetalert-->
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script><!-- your scripts -->
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script><!-- bootstrap -->
+    <script src="{{ url_for('static', filename='js/all.min.js') }}"></script><!-- fontawesome -->
+    
+  </body>
+  </html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>home|membership</title>
+      <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'><!--font ubuntu -->
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}"><!--bootstrap-->
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/all.min.css') }}"><!--fontawesome-->
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesMember.css') }}"><!--your styles-->
+  </head>
+  <body>
+    <div class="container">
+
+      <div>
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <div class="container logo">
+              <div class="row">
+                <div class="col-12 text-center shadow p-3 mb-5 bg-white rounded">
+                  <a href="/"><img src="{{ url_for('static', filename='img/logo.png') }}" alt="Your Logo" class="img-fluid"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="container container2">
+        <div class="row">
+          <div class="col-md-4 col-sm-6 gallery-item">
+            <a href="{{url_for('cleaning')}}">
+              <img src="{{ url_for('static', filename='img/services/cleaning.jpg') }}" class="img-fluid">
+              <span class="image-name">Cleaning</span>
+            </a>
+          </div>
+          <div class="col-md-4 col-sm-6 gallery-item">
+            <a href="{{url_for('handymen')}}">
+              <img src="{{ url_for('static', filename='img/services/handymen.jpg') }}" class="img-fluid">
+              <span class="image-name">Handymen</span>
+            </a>
+          </div>
+          <div class="col-md-4 col-sm-6 gallery-item">
+            <a href="{{url_for('inspection')}}">
+              <img src="{{ url_for('static', filename='img/services/inspection.jpg') }}" class="img-fluid">
+              <span class="image-name">Inspection</span>
+            </a>
+          </div>
+          <div class="col-md-4 col-sm-6 gallery-item">
+            <a href="{{url_for('maintenance')}}">
+              <img src="{{ url_for('static', filename='img/services/maintenance.jpg') }}" class="img-fluid">
+              <span class="image-name">Maintenance</span>
+            </a>
+          </div>
+          <div class="col-md-4 col-sm-6 gallery-item">
+            <a href="{{url_for('move_in')}}">
+              <img src="{{ url_for('static', filename='img/services/move-in.jpg') }}" class="img-fluid">
+              <span class="image-name">Move-In</span>
+            </a>
+          </div>
+          <div class="col-md-4 col-sm-6 gallery-item">
+            <a href="{{url_for('move_out')}}">
+              <img src="{{ url_for('static', filename='img/services/move-out.jpg') }}" class="img-fluid">
+              <span class="image-name">Move-Out</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <br>
+
+      <footer class="footer ftr">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <a href="tel:+97124444360"><img src="{{ url_for('static', filename='img/tel.png') }}" class="img-fluid"></a>
+            </div>
+            <div class="col-sm-4">
+              <a href="mailto:contact@miramar-uae.com"><img src="{{ url_for('static', filename='img/mail.png') }}" class="img-fluid"></a>
+            </div>
+            <div class="col-sm-4">
+              <a href="https://goo.gl/maps/YcJSwonRBSoWyYo3A" target="_blank"><img src="{{ url_for('static', filename='img/loc.png') }}" class="img-fluid"></a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      {% for msg in get_flashed_messages() %}
+          {% if msg == 'firstLog' %}
+            <span id="msgMember" hidden>{{msg}}</span>
+          {% else %}
+            <span id="user" hidden>{{msg}}</span>
+          {% endif %}
+      {% endfor %}
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script><!-- sweetalert -->
+    <script src="{{ url_for('static', filename='js/scriptMember.js') }}"></script><!-- your script-->
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script><!-- bootstrap -->
+    <script src="{{ url_for('static', filename='js/all.min.js') }}"></script><!-- fontawesome -->
+  </body>
+  </html>
